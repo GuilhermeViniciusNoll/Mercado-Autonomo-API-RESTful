@@ -1,10 +1,10 @@
-import { product } from "./interfaces"
+import { Product } from "./interfaces"
 import { dataBase } from "./database"
 import { Request, Response, NextFunction } from "express"
 
 const idValidator = (req: Request, res: Response, next: NextFunction) => {
     const { id } = req.params
-    const objSelect: product | undefined = dataBase.find((prod) => prod.id == Number(id))
+    const objSelect: Product | undefined = dataBase.find((prod) => prod.id == Number(id))
     const index: number = dataBase.findIndex((prod) => prod.id == Number(id))
 
     if (objSelect === undefined) {
@@ -17,7 +17,7 @@ const idValidator = (req: Request, res: Response, next: NextFunction) => {
 
 const uniqueName = (req: Request, res: Response, next: NextFunction) => {
     const { name } = req.body
-    const objSelect: product | undefined = dataBase.find((prod) => prod.name == name)
+    const objSelect: Product | undefined = dataBase.find((prod) => prod.name == name)
     if (objSelect != undefined) {
         return res.status(409).json({ "message": "Product already registered." })
     }

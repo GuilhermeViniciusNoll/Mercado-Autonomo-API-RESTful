@@ -1,4 +1,4 @@
-import express, { Application, Request, Response, json } from "express"
+import express, { Application, json } from "express"
 import logic from "./logics"
 import middleware from "./middlewares"
 

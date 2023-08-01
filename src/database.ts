@@ -1,5 +1,5 @@
-import { product } from "./interfaces"
+import { Product } from "./interfaces"
 
-const dataBase: product[] = []
+const dataBase: Product[] = []
 
 export { dataBase }

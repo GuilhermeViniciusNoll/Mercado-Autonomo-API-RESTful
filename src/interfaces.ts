@@ -1,4 +1,4 @@
-interface product {
+interface Product {
     id: number,
     name: string,
     price: number,
@@ -8,4 +8,4 @@ interface product {
     expirationDate: Date,
 }
 
-export { product }
+export { Product }
